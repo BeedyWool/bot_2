@@ -7,9 +7,9 @@ bot.on("ready", function () {
 	console.log("Bot connecté");
 });
 
-bot.on('message', message => {
+bot.on('message', message => {nde = [":moneybag: | La
    if (message.content.startsWith("/piece")) {
-var commande = [":moneybag: | La pièce dit : Face.", ":moneybag: | La pièce dit : Pile."]
+var comma pièce dit : Face.", ":moneybag: | La pièce dit : Pile."]
      message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`)
 }
 
@@ -189,7 +189,7 @@ bot.on('message', message => {
         .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
         role.guild.channels.find("name", 'logs').send(emb)
 	     } catch(err) {
-            role.guild.owner.send(".")
+            console.log(".")
         }
     })
 
@@ -202,7 +202,7 @@ bot.on('message', message => {
         .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
     role.guild.channels.find("name", 'logs').send(emb)
          } catch(err) {
-            role.guild.owner.send(".")
+            console.log(".")
         }
     })
 	 
@@ -216,7 +216,7 @@ bot.on('message', message => {
             .setDescription(`L'émoji ${emoji.name} à été crée sur : ${emoji.guild.name}`)
         emoji.guild.channels.find("name", 'logs').send(emb)
 		  } catch(err) {
-            emoji.guild.owner.send(".")
+            console.log(".")
         }
     });
     
@@ -229,7 +229,7 @@ bot.on('message', message => {
             .setDescription(`L'emoji ${emoji.name} à été supprimé du serveur : ${emoji.guild.name}`)
         emoji.guild.channels.find("name", 'logs').send(emb)
       } catch(err) {
-            emoji.guild.owner.send(".")
+            console.log(".")
         }
     })
 
