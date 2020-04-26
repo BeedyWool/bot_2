@@ -81,8 +81,7 @@ bot.on("message", message => {
 	    	.addField("/piece","Lance la pièce : pile ou face ?")
 	    	.addField("/bvn","Souhaitez la bienvenue a une personne.")
 	    	.addField("/salut","Faites un petit coucou a quelqu'un.")
-	    	.addField("/say","Fait parler le bot")
-	    	.addField("/toto","Raconte une blague de toto.")
+	    	.addField("/say","Fait parler le bot") 
 	    	.addField("Bienvenue","Creez simplement un salon nommé : bienvenue")
 	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1 ou 2 Il y a 2 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
@@ -245,12 +244,6 @@ bot.on('message', message => {
    }
 });
 
-bot.on('message', message => {
-   if (message.content.startsWith("/toto")) {
-var commande = ["🤣 | Toto fais 25x le tour de la cour, Pourquoi ? sǝpnʇé sǝs ʇınsɹnod ʃı ɹɐɔ","🤣 | Toto fais que sauter, sa maman lui demande pourquoi, il répond : J'ai bu du sirop ce matin, mais j'ai oublié de secouer la bouteille."]
-     message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`)
-}
-})
 
 bot.on('message', message => {
    if (message.content.startsWith("/salut")) {
