@@ -1,28 +1,31 @@
 {
-  "name": "splatbotoont",
-  "version": "0.0.1",
-  "description": "",
+  "name": "discord.js-thevoid",
+  "version": "1.0.0",
+  "description": "An in-depth guide on deploying your Discord.js bot on Heroku",
   "main": "index.js",
+  "engines": {
+    "node": "8.x",
+    "npm": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "JT",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synicalsyntax/discord.js-heroku.git"
+  },
+  "keywords": [
+    "heroku",
+    "discord.js"
+  ],
+  "author": "Beedy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/synicalsyntax/discord.js-heroku/issues"
+  },
+  "homepage": "https://github.com/synicalsyntax/discord.js-heroku#readme",
   "dependencies": {
-    "cron": "^1.2.1",
-    "discord.js": "^11.0.0",
-    "ffmpeg": "0.0.4",
-    "node-opus": "^0.2.4"
+    "discord.js": "^11.3.0"
   }
 }
-
- "engines": {
-    "node": "10.x",
-    "npm": "*"
-  },
-
- "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
