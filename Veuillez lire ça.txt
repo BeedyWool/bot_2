@@ -1,0 +1,6 @@
+IMPORTANT ⚠
+Pour dev le bot il vous faut Node.js et npm
+
+Vous pouvez maintenant ajouter votre code dans le fichier Index.js (attention Beedy n'utilise plus bot.quelque_chose mais bien client.quelque_chose). N'oubliez pas de mttre les infos du bot dans package.json
+
+Ce fichier est à supprimer avant upload du bot
