@@ -296,4 +296,23 @@ bot.on('message', message => {
    }
 });
 
+if(message.content.startsWith(prefix + "chat")) {
+            let xoargs = message.content.split(" ").slice(1);
+            let xo03 = xoargs.join(" ")
+            var xo02 = message.guild.channels.find('name', 'voidverse');
+            if(!xo02) return message.reply(":speech_balloon: | Le salon **voidverse** est introuvable")
+            if(message.channel.name !== 'u-chat') return message.reply(":speech_balloon: | La commande à effectuer dans le salon **voidverse**")
+            if(!xo03) return message.reply(":speech_balloon: | Merci d'écrire un message qui sera envoyé à tout le monde.")
+            var embedglobal = new Discord.RichEmbed()
+            .setColor("0x88CC14")
+            .setTitle(":speech_balloon: | Voidverse message")
+            .addField("Envoyé par :", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Envoyé de :", message.guild.name, true)
+            .addField("Message :", xo03)
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+            .setTimestamp()
+          bot.channels.findAll('name', 'voidverse').map(channel => channel.send({embed}))
+         	 break;
+}
+
 bot.login(process.env.TOKEN)
