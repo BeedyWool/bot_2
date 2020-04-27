@@ -230,7 +230,7 @@ bot.on('message', message => {
     })
 
 
-client.on('message', message => {
+bot.on('message', message => {
   // Ignore messages that aren't from a guild
   if (!message.guild) return;
 
