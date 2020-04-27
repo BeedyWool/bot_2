@@ -83,7 +83,6 @@ bot.on("message", message => {
 	    	.addField("/salut","Faites un petit coucou a quelqu'un.")
 	    	.addField("/say","Fait parler le bot") 
 	    	.addField("Bienvenue","Creez simplement un salon nommé : bienvenue")
-	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1 ou 2 Il y a 2 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
 	    	.setThumbnail("https://cdn.discordapp.com/avatars/400376181876195329/742ec0b8cc471f78184130d508d946f9.png?size=2048")
@@ -231,6 +230,51 @@ bot.on('message', message => {
         }
     })
 
+
+client.on('message', message => {
+  // Ignore messages that aren't from a guild
+  if (!message.guild) return;
+
+  // If the message content starts with "!kick"
+  if (message.content.startsWith('/kick')) {
+    // Assuming we mention someone in the message, this will return the user
+    // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+    const user = message.mentions.users.first();
+    // If we have a user mentioned
+    if (user) {
+      // Now we get the member from the user
+      const member = message.guild.member(user);
+      // If the member is in the guild
+      if (member) {
+        /**
+         * Kick the member
+         * Make sure you run this on a member, not a user!
+         * There are big differences between a user and a member
+         */
+        member
+          .kick('Optional reason that will display in the audit logs')
+          .then(() => {
+            // We let the message author know we were able to kick the person
+            message.reply(`:anger: | J'ai bien kick ${user.tag}.`);
+          })
+          .catch(err => {
+            // An error happened
+            // This is generally due to the bot not being able to kick the member,
+            // either due to missing permissions or role hierarchy
+            message.reply(":anger: | Je n'ai pas pu kick cet utilisateur !");
+            // Log the error
+            console.error(err);
+          });
+      } else {
+        // The mentioned user isn't in this guild
+        message.reply(":anger: | Cet utilisateur n'est pas dans le serveur !");
+      }
+      // Otherwise, if no user was mentioned
+    } else {
+      message.reply(":anger: | Vous devez mentionner l'utilisateur à kick !");
+    }
+  }
+});
 
 
 
